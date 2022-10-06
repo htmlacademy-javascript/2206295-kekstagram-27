@@ -9,3 +9,15 @@ let getRandomNumber = function (minVlaue, maxValue) {
   }
   return randomNumber
 }
+
+let maxStringLength
+let lenght
+let acceptableLength
+let checkLine = function (lenght, maxStringLength) {
+  if (lenght <= maxStringLength) {
+    acceptableLength = true
+  } else {
+    acceptableLength = false
+  }
+  return acceptableLength
+}
