@@ -1,5 +1,5 @@
-function getRandomNumber(minVlaue, maxValue) {
-  randomNumber = Math.floor(Math.random() * (maxValue - minVlaue + 1)) + minVlaue
+const getRandomNumber = function (minVlaue, maxValue) {
+  let randomNumber = Math.floor(Math.random() * (maxValue - minVlaue + 1)) + minVlaue
   if (randomNumber < 0) {
     randomNumber = NaN;
   }
