@@ -9,7 +9,7 @@ const getRandomNumber = function (minVlaue, maxValue) {
 const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
 
 const checkStringLength = function (length, maxStringLength) {
-  return length <= maxStringLength;
+  return length <= maxStringLength
 };
 
 const NAMES = ['Даниил', 'Александр', 'Платон', 'Алиса', 'Софья', 'Агата', 'Максим', 'Полина', 'Анна', 'Марина', 'Ирина', 'Иван', 'Наталья', 'Дарья', 'Илья', 'Варвара', 'Герман', 'Анастасия', 'Елизавета', 'Амира', 'Камиль', 'Артём', 'Артур', 'Стефания', 'Зоя', 'Валерия', 'Михаил', 'Василий', 'Владислав', 'Алексей'];
@@ -18,26 +18,25 @@ const MESSAGES = ['Всё отлично!', 'В целом всё неплохо
 
 const NUMBER_GENERATED_OBJECT = 25;
 
-const getIdList = function (maxListIndex) {
-  let list = [];
-  for (let i = 0; i < maxListIndex; i++) {
-    list.push(getRandomNumber(1, maxListIndex));
-  };
-  let list2 = Array.from(new Set(list));
-  list = list2;
-  while (list.length < maxListIndex) {
-    list.push(getRandomNumber(1, maxListIndex));
-    list2 = Array.from(new Set(list));
-    list = list2;
-  };
-  return list;
+let idListPhoto = [];
+
+for (let i = 1; i <= 25; i++) {
+  idListPhoto.push(i)
 };
 
-let idListPhoto = getIdList(NUMBER_GENERATED_OBJECT);
-
-let idListComment = getIdList(1000);
+let idListComment = Array.from(idListPhoto);
 
 const createRandomComment = function () {
+  let e = getRandomNumber(1, 4);
+  if (e === 1) {
+    return {
+      id: idListComment.shift(),
+      avatar: `img/avatar${getRandomNumber(1, 6)}.svg`,
+      message: `${getRandomArrayElement(MESSAGES)}
+      ${getRandomArrayElement(MESSAGES)}`,
+      name: getRandomArrayElement(NAMES),
+    }
+  }
   return {
     id: idListComment.shift(),
     avatar: `img/avatar${getRandomNumber(1, 6)}.svg`,
@@ -56,7 +55,4 @@ const createRandomPhoto = function () {
   }
 };
 
-
-
 const dateForCheck = Array.from({ length: NUMBER_GENERATED_OBJECT }, createRandomPhoto);
-
