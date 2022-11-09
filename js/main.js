@@ -6,10 +6,8 @@ const getRandomNumber = function (minVlaue, maxValue) {
   return randomNumber;
 };
 
-const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
-
 const checkStringLength = function (length, maxStringLength) {
-  return length <= maxStringLength
+  return length <= maxStringLength;
 };
 
 const NUMBER_GENERATED_OBJECT = 25;
@@ -27,7 +25,7 @@ const createRandomPhoto = function (id) {
 let photos = [];
 
 for (let i = 0; i < NUMBER_GENERATED_OBJECT; i++) {
-  let currentId = i + 1;
+  currentId = i + 1;
   photos.push(createRandomPhoto());
   photos[i].id = currentId;
 };
