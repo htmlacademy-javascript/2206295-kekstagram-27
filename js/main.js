@@ -31,5 +31,3 @@ for (let i = 0; i < NUMBER_GENERATED_OBJECT; i++) {
   photos.push(createRandomPhoto)
   photos[i].id = currentId + 1
 }
-
-console.log(photos)
