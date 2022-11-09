@@ -27,7 +27,7 @@ const createRandomPhoto = function (id) {
 let photos = [];
 
 for (let i = 0; i < NUMBER_GENERATED_OBJECT; i++) {
-  let currentId = i + 1
-  photos.push(createRandomPhoto)
-  photos[i].id = currentId + 1
-}
+  let currentId = i + 1;
+  photos.push(createRandomPhoto());
+  photos[i].id = currentId;
+};
